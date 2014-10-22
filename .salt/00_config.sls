@@ -100,7 +100,6 @@ config:
   service.running:
     - name: sabnzbdplus
     - enable: True
-    - reload: True
     - watch:
       - pkg: install-sabznbd
       - user: sabnzbd

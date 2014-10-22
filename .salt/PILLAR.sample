@@ -14,18 +14,37 @@
 #
 # think that dicts are updated/merged with default
 # but lists are overidden
+makina-states.http.nginx.default_vhost: false
 makina-projects.projectname:
   data:
     opt: value
-    password: SecretToBeChangedInsidePillar
-  env_defaults:
-    dev:
-      opt: value2
-  os_defaults:
-    Ubuntu:
-# os  filter
-      opt: value1
-    Debian:
-# os familly filter
-      opt1: value11
+    password: secret
+    port: 8080
+    sport: 8443
+    complete: /complete
+    cache: /var/lib/sabnzbd/.sabnzbd/cache
+    admind: /var/lib/sabnzbd/.sabnzbd/admin
+    logs: /var/lib/sabnzbd/.sabnzbd/logs
+    nzbds: /var/lib/sabnzbd/.sabnzbd/nzbs
+    dirscan: /complete/dirscan
+    username: sabnzbd
+    incomplete: /complete/incomplete
+    nginx_vhost: salt://makina-projects/{name}/files/nginx.content.conf
+    host: 0.0.0.0
+    server_aliases: []
+    config: |
+            [servers]
+            [[news-europe.giganews.com:563]]
+            username = xxx
+            enable = 1
+            name = news-europe.giganews.com:563
+            fillserver = 0
+            connections = 4
+            ssl = 1
+            host = news-europe.giganews.com
+            timeout = 120
+            password = xxx
+            optional = 0
+            port = 563
+            retention = 0
 # vim:set ft=yaml:

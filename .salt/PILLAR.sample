@@ -21,6 +21,7 @@ makina-projects.projectname:
     password: secret
     port: 8080
     sport: 8443
+    listen: 0.0.0.0
     complete: /complete
     cache: /var/lib/sabnzbd/.sabnzbd/cache
     admind: /var/lib/sabnzbd/.sabnzbd/admin
@@ -32,7 +33,7 @@ makina-projects.projectname:
     nginx_vhost: salt://makina-projects/{name}/files/nginx.content.conf
     host: 0.0.0.0
     server_aliases: []
-    config: |
+    rawconfig: |
             [servers]
             [[news-europe.giganews.com:563]]
             username = xxx

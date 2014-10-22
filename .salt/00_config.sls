@@ -41,7 +41,9 @@ config2:
   file.managed:
     - makedirs: true
     - source: salt://makina-projects/{{cfg.name}}/files/sabnzbd.ini
-    - name: /etc/sabnzbd.ini
+    - names: 
+      - /etc/sabnzbd.ini
+      - /etc/sabnzbd.ini.bak
     - template: jinja
     - mode: 660
     - user: sabnzbd
